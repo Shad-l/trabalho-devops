@@ -20,3 +20,7 @@ def read_root():
 @app.get("/teste3")
 def read_root():
     return {"teste3": "teste3"}
+
+@app.get("/teste4")
+def read_root():
+    return {"teste4": "teste4"}
