@@ -13,6 +13,10 @@ def read_root():
 def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
 
-@app.get("/teste")
+@app.get("/teste2")
 def read_root():
-    return {"teste": "teste"}
+    return {"teste2": "teste2"}
+
+@app.get("/teste3")
+def read_root():
+    return {"teste3": "teste3"}
