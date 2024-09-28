@@ -11,7 +11,7 @@ def teste_funcaoteste():
 
 def teste_create_estudante(estudante:Estudante):
     estudante_teste = Estudante(name="Fulano", curso="Curso Teste", ativo="false")
-    assert estudante_teste == create_estudante()
+    assert estudante_teste == create_estudante(estudante_teste)
 
 def teste_update_estudante_negativo(id_estudante: int):
     assert not update_estudante(-5)
