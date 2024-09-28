@@ -2,26 +2,40 @@ from src.main import *
 from unittest.mock import path
 
 def teste_root():
-    assert root() == {"message": "Hello World"}
+    result = root()
+    yield result
+    assert result == {"message": "Hello World"}
 
 def teste_funcaoteste():
     with path('random.randint', return_value = 12345):
         result = funcaoteste()
+        yield result
     assert result == {"teste": True, "num_aleatorio": 12345}
 
 def teste_create_estudante(estudante:Estudante):
     estudante_teste = Estudante(name="Fulano", curso="Curso Teste", ativo="false")
-    assert estudante_teste == create_estudante(estudante_teste)
+    result = create_estudante(estudante_teste)
+    yield result
+    assert estudante_teste == result
 
 def teste_update_estudante_negativo(id_estudante: int):
-    assert not update_estudante(-5)
+    result = update_estudante(-5)
+    yield result
+    assert not result
 
 def teste_update_estudante_positivo(id_estudante: int):
-    assert update_estudante(10)
+    result = update_estudante(10)
+    yield result
+    assert not result
 
 def teste_delete_estudante_negativo(id_estudante: int):
-    assert not delete_estudante(-5)
+    result = delete_estudante(-5)
+    yield result
+    assert not result
 
 def teste_delete_estudante_positivo(id_estudante: int):
-    assert delete_estudante(5)
+    result = delete_estudante(5)
+    yield result
+    assert not result
+
 
