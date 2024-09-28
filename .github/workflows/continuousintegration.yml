@@ -49,15 +49,3 @@ jobs:
           pytest test/teste.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
 
 
-  discord:
-    runs-on: ubuntu-latest
-    steps:
-
-    - uses: actions/checkout@v4
-
-    - name: Run Discord Webhook
-      uses: Sniddl/discord-commits@v1.6 
-      with:
-        webhook: ${{ secrets.DISCORD_WEBHOOK }}
-        template: "avatar-with-link"
-        include-extras: true
