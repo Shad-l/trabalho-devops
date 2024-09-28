@@ -43,7 +43,7 @@ async def list_estudantes():
 @app.get("/estudantes/{estudante_id}", response_model=Estudante)
 async def get_estudante(estudante_id: int):
     if estudante_id < 0 or estudante_id >= len(estudantes_db):
-        raise HTTPException(status_code=404, detail="Estudante não encontrado")
+        raise HTTPException(status_code=404, detail="Estudante não  encontrado")
     return estudantes_db[estudante_id]
 
 @app.put("/estudantes/{estudante_id}", response_model=Estudante)
